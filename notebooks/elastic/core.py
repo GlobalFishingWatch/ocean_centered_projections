@@ -126,7 +126,6 @@ def load_geographic_data(filename: str) -> tuple[list[ΦΛFeature], bool]:
                 category = index
             try:
                 width = 0.5 * record["strokeweig"]  # SIC
-                print("using strokeweight of", width)
             except IndexError:
                 width = 1
             lines: list[XYLine] = []
@@ -321,7 +320,7 @@ def add_data_to_ax(ax, data_name, style, zorder, sections, rotation_deg=0):
 def copy_rotated_projection(input_path, output_path, rotation_deg):
     shutil.copy(input_path, output_path)
     with h5py.File(output_path, "r+") as data:
-        projected_boundary = rotate_points(data["projected boundary"][:], rotation)
+        projected_boundary = rotate_points(data["projected boundary"][:], rotation_deg)
         data["projected boundary"][:] = projected_boundary
         data["bounding box"]["x"][0] = np.nanmin(projected_boundary["x"])
         data["bounding box"]["x"][1] = np.nanmax(projected_boundary["x"])
@@ -329,5 +328,5 @@ def copy_rotated_projection(input_path, output_path, rotation_deg):
         data["bounding box"]["y"][1] = np.nanmax(projected_boundary["y"])
         for i in range(data.attrs["number of sections"]):
             data[f"section {i}/projected points"][:] = rotate_points(
-                data[f"section {i}/projected points"][:], rotation
+                data[f"section {i}/projected points"][:], rotation_deg
             )
