@@ -55,7 +55,7 @@ def add_labels_to_ax(ax, sections, dpi):
             "small",
             (0, 0),
         ),
-        ("Eastern\nSouth America", (-68, -30), ("center", "baseline"), "small", (0, 0)),
+        ("Eastern\nSouth America", (-53, -18), ("center", "baseline"), "small", (0, 0)),
         (
             "Western\nSouth America",
             (-71, -30),
@@ -149,9 +149,9 @@ def plot_elastic(
     nominal_size=16,
     dpi=300,
     projection_name="Elastic-II",
-    add_coastline=False,
-    add_rivers=False,
-    add_lakes=False,
+    add_shorelines_with_color=None,
+    add_rivers_with_color=None,
+    add_lakes_with_color=None,
     ax=None,
     alpha=1.0,
     zorder=1,
@@ -206,45 +206,45 @@ def plot_elastic(
         ax.patch.set_facecolor(background_color)
 
     # Alpha is really used for toning down colors, so just push toward black
-    water = tuple(alpha * x / 255 for x in (10, 0, 215))
-    if add_lakes:
+    if add_lakes_with_color:
         add_data_to_ax(
             ax,
             "ne_110m_lakes",
             dict(
-                facecolor=water,
-                edgecolor=water,
+                facecolor=add_lakes_with_color,
+                edgecolor=add_lakes_with_color,
                 linewidth=0.2,
             ),
-            zorder=-1,
+            zorder=zorder + 1,
             sections=sections,
             rotation_deg=rotation_deg,
         )
-    if add_rivers:
+    if add_rivers_with_color:
         add_data_to_ax(
             ax,
             "ne_50m_rivers_lake_centerlines_scale_rank",
             dict(
-                color=water,
+                color=add_rivers_with_color,
                 linewidth=0,
             ),
-            zorder=-1,
+            zorder=zorder + 1,
             sections=sections,
             rotation_deg=rotation_deg,
         )
-    if add_coastline:
+    if add_shorelines_with_color:
         add_data_to_ax(
             ax,
             "ne_50m_coastline",
             dict(
-                color="#000000",
+                color=add_shorelines_with_color,
                 linewidth=0.2,
             ),
-            zorder=-1,
+            zorder=zorder + 1,
             sections=sections,
             rotation_deg=rotation_deg,
         )
 
-    add_labels_to_ax(ax, sections, dpi)
+    if add_labels:
+        add_labels_to_ax(ax, sections, dpi)
 
     return ax

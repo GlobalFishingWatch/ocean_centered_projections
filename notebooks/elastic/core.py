@@ -22,6 +22,9 @@ XYFeature = tuple[int, float, list[XYLine]]
 ΦΛLine = NDArray[ΦΛPoint]
 ΦΛFeature = tuple[int, float, list[ΦΛLine]]
 
+root_dir = FilePath(__file__).parent.parent.parent.resolve()
+
+print(root_dir)
 
 class Section:
     def __init__(
@@ -115,9 +118,8 @@ def load_geographic_data(filename: str) -> tuple[list[ΦΛFeature], bool]:
     features: list[ΦΛFeature] = []
     closed = True
     # TODO: make take paths
-    with shapefile.Reader(
-        f"../../resources/shapefiles/{filename}.zip", encoding=encoding
-    ) as f:
+    path = root_dir / f"resources/shapefiles/natural_earth/{filename}.zip"
+    with shapefile.Reader(path, encoding=encoding) as f:
         for index, (record, shape) in enumerate(zip(f.records(), f.shapes())):
             closed = shape.shapeTypeName == "POLYGON"
             try:

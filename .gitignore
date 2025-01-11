@@ -1,4 +1,5 @@
 untracked
+resources/shapefiles/natural_earth
 
 # caches
 .ipynb_checkpoints
