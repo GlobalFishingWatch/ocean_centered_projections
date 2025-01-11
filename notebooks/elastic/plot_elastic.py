@@ -41,7 +41,8 @@ def turn_off_labels(ax):
     ax.get_yaxis().set_ticks([])
 
 
-def add_labels_to_ax(ax, sections):
+def add_labels_to_ax(ax, sections, dpi):
+    scale = dpi / 300
     labels = [
         ("Europe", (23, 50.0), ("center", "baseline"), "small", (0, 0)),
         ("West\nAfrica", (7, 11), ("center", "baseline"), "small", (0, 0)),
@@ -93,7 +94,7 @@ def add_labels_to_ax(ax, sections):
             (34.3, 29.2),
             (50, 200),
             # "arc3,rad=0.3"
-            "arc,angleA=180,angleB=0,armA=200,armB=1000,rad=100",
+            f"arc,angleA=180,angleB=0,armA={scale * 200},armB={scale * 1000},rad={scale * 100}",
         ),
         (
             (-81, 9),
@@ -101,14 +102,14 @@ def add_labels_to_ax(ax, sections):
             (-83, 9),
             (-100, -400),
             # "arc3,rad=-0.3"
-            "arc,angleA=180,angleB=0,armA=700,armB=800,rad=100",
+            f"arc,angleA=180,angleB=0,armA={scale * 700},armB={scale * 800},rad={scale * 100}",
         ),
         (
             (-168, 66),
             (-50, 100),
             (-168, 60),
             (1450, 0),
-            "arc,angleA=-90,angleB=-90,armA=1100,armB=1360,rad=100",
+            f"arc,angleA=-90,angleB=-90,armA={scale * 1100},armB={scale * 1360},rad={scale * 100}",
         ),
     ]:
         line = np.zeros([2], dtype=ΦΛPoint)
@@ -244,6 +245,6 @@ def plot_elastic(
             rotation_deg=rotation_deg,
         )
 
-    add_labels_to_ax(ax, sections)
+    add_labels_to_ax(ax, sections, dpi)
 
     return ax
