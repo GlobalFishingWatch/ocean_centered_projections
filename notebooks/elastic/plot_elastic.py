@@ -155,10 +155,11 @@ def plot_elastic(
     ax=None,
     alpha=1.0,
     zorder=1,
-    nominal_pixel_size=72, # This should scale with raster size.
+    nominal_pixel_size=0.72, 
     rotation_deg=0,
     add_labels=True,
 ):
+    h, w = foreground_raster.shape
     projection_path = f"../../projection/{projection_name}.h5"
     sections, boundary, aspect_ratio = load_elastic_projection(projection_path)
     latlon_raster = create_latlon_raster(foreground_raster)
@@ -167,6 +168,8 @@ def plot_elastic(
         latlon_raster = latlon_raster[mask]
         foreground_raster = foreground_raster[mask]
     xy_points = project_points(latlon_raster.flatten(), sections)
+
+    pixel_size = nominal_pixel_size * 3600 / w
 
     if isinstance(background_color, str):
         background_color = hex_to_rgb(background_color)
@@ -195,7 +198,7 @@ def plot_elastic(
         c=z,
         edgecolors="none",
         # marker="s",
-        s=nominal_pixel_size / dpi,
+        s=pixel_size,
         cmap=cmap,
         norm=norm,
         alpha=alpha,
