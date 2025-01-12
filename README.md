@@ -11,6 +11,16 @@ steps shown in [notebooks/data/Download.ipynb](notebooks/data/Download.ipynb).
 This data will produce plots that are similar, but not identical to those
 shown below.
 
+If you want overlays on the Elastic plots described below you'll need to
+download shapefiles from [Natural Earth] (https://www.naturalearthdata.com/downloads/) 
+and place them to the `resources/shapefiles/natural_earth` directory.
+You'll need:
+
+* Rivers: `ne_50m_rivers_lake_centerlines_scale_rank.zip`
+* Lakes: `ne_110m_lakes.zip`
+* Shoreline: `ne_50m_coastline.zip`
+
+
 ## Projections
 
 ### Spilhaus-Adams
@@ -30,22 +40,14 @@ included here because the I didn't want to mix licenses.
 
 ### Elastic Projections
 
-The [Elastic projections]
-(https://kunimune.blog/2023/12/29/introducing-the-elastic-projections/)
+The 
+[Elastic projections](https://kunimune.blog/2023/12/29/introducing-the-elastic-projections/)
 are a family of map projections developed by Justin Kunimune. These
 projections include one meant for mapping the oceans (`Elastic-II`) and
 more importantly their [repo](https://github.com/jkunimune/elastik) 
 includes with a toolkit for creating new projections by specifying where
 to cut the globe and how to weight different regions when attempting to
 minimize distortion.
-
-If you want overlays on the Elastic plots described below you'll need to
-download shapefiles from [Natural Earth] (https://www.naturalearthdata.com/downloads/) 
-and place them to the `resources/shapefiles/natural_earth` directory.
-You'll need:
-    * Rivers: `ne_50m_rivers_lake_centerlines_scale_rank.zip`
-    * Lakes: `ne_110m_lakes.zip`
-    * Shoreline: `ne_50m_coastline.zip`
 
 See the [PlotElastic notebook](notebooks/elastic/PlotElastic.ipynb) for
 some examples of how to plot data in Elastic projections.
