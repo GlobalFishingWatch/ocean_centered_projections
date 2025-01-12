@@ -66,9 +66,16 @@ find this confusing.
 
     TODO: discuss choices a bit
 
+### EqualEarth
 
-# TODO: add a plot using EqualEarth for comparison
+<img src="resources/images/equalearth.png" alt="Vessel Presence in EqualEarth projection" width="512"/>
 
+Finally, for comparison, here's the same data in EqualEarth, the global
+projection we typically use. This has the large advantage of
+familiarity and most users can immediately interpret what, or at least
+where, they are looking at. However, it is not as good at showing how
+the ocean basins interconnect, you always end up cutting some ocean in
+half, and it doesn't do a good job close to the poles.
 
 ## Licensing
 
