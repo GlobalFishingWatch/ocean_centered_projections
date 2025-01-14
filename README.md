@@ -25,7 +25,10 @@ You'll need:
 
 ### Spilhaus-Adams
 
-<img src="resources/images/spilhaus-adams.png" alt="Vessel Presence in Spilhaus-Adams projection" width="512"/>
+<p float="left" align="center">
+    <img src="resources/images/spilhaus-adams.png" alt="Vessel Presence in Spilhaus-Adams projection" width="384"/>
+    <img src="resources/images/spilhaus-adams-distortion.png" alt="Distortion in Spilhaus-Adams projection" width="384"/>
+</p>
 
     TODO: Provide some links to discussion of history
 
@@ -54,7 +57,10 @@ some examples of how to plot data in Elastic projections.
 
 #### Elastic-II
 
-<img src="resources/images/elastic-ii.png" alt="Vessel Presence in Elastic-II projection" width="512"/>
+<p float="left" align="center">
+    <img src="resources/images/elastic-ii.png" alt="Vessel Presence in Elastic-II projection" width="384"/>
+    <img src="resources/images/elastic-ii-distortion.png" alt="Distortion in Elastic-II projection" width="384"/>
+</p>
 
 The Elastic-II projection greatly improves on the distortion present in
 the Spilhaus-Adams projection, but at the cost of Australia. Australia
@@ -64,13 +70,20 @@ find this confusing.
 
 #### Elastic-X (aka Ozone?)
 
-<img src="resources/images/elastic-x.png" alt="Vessel Presence in Elastic-X projection" width="512"/>
+<p float="left" align="center">
+    <img src="resources/images/elastic-x.png" alt="Vessel Presence in Elastic-X projection" width="384"/>
+    <img src="resources/images/elastic-x-distortion.png" alt="Distortion in Elastic-X projection" width="384"/>
+</p>
+
 
     TODO: discuss choices a bit
 
 ### EqualEarth
 
-<img src="resources/images/equalearth.png" alt="Vessel Presence in EqualEarth projection" width="512"/>
+<p float="left" align="center">
+    <img src="resources/images/equalearth.png" alt="Vessel Presence in EqualEarth projection" width="384"/>
+    <img src="resources/images/equalearth-distortion.png" alt="Distortion in EqualEarth projection" width="384"/>
+</p>
 
 Finally, for comparison, here's the same data in EqualEarth, the global
 projection we typically use. This has the large advantage of
