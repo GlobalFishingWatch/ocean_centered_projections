@@ -77,30 +77,46 @@ find this confusing.
     <img src="resources/images/elastic-x-distortion.png" alt="Distortion in Elastic-X projection" width="384"/>
 </p>
 
-We're currently calling this Elastic-X as a placeholder, where X means
-unknown. We hope to come up with a more descriptive name for it at some
-point.
+We're currently calling this Elastic-X as a placeholder. We hope to come
+up with a more descriptive name for it at some point.
 
 This is closely related to Elastic-II, but we've made two changes to
 make it more suitable for our use cases.
 
-1. Shorten the cut that runs through Thailand. In Elastic-II this continues down into Australia, which is why
-   Australia gets disintegrated, but here we truncate it in Thailand, which preserves Australia at the expense
-   of some additional distortion on the ocean.
+1. Shorten the cut that runs through Thailand. In Elastic-II this
+   continues down into Australia, see central red line below, which is why
+   Australia gets disintegrated, but here we truncate it in Thailand, see
+   solid portion of red line below, which preserves Australia at the
+   expense of some additional distortion on the ocean.
+
+   <p float="left" align="center">
+       <img src="resources/images/map-cuts.png" 
+          alt="Map cuts in Elastic-II and Elastic-X projections" width="384"/>
+   </p>
 
 2. Change the weighting functions. In Elastic-II, the open ocean and a
-   small strip along the coast are weighted highly, while inland regions
-   are down-weighted. For shape distortion, we use a similar weighting scheme 
+   small strip along the coast are weighted highly while inland regions
+   are down-weighted. See below, left.
+
+   In Elastic-X, for shape distortion, we use a similar weighting scheme 
    as used in Elastic-II, where we weight the oceans high and inland low.
    However, for the area distortion we weight the areas near the shore, both
-   inland and at sea, highly and everything else low. We also broaden transition
-   region in both cases.
+   inland and at sea, high and everything else low. We also broaden transition
+   region in both cases. See below, right.
 
-   The results in less distortion near the shore and more in the high
-   seas than we get if we use the same weighting scheme as Elastic-II with this
-   set of cuts. Since the majority of ocean activity occurs near
-   shore, this seems like a good trade off. It also results in less distortion
-   of Australia and Antarctica which makes it somewhat easier interpret the map.
+   The results in less distortion near the shore and more on the high
+   seas than we get if we use the same weighting scheme as Elastic-II
+   but with this set of cuts. Since the majority of ocean activity
+   occurs near shore, this seems like a good trade off. It also results
+   in less distortion of Australia and Antarctica which makes it
+   somewhat easier interpret the map.
+
+   <p float="left" align="center">
+       <img src="resources/images/elastic-ii-weights.png" 
+           alt="How we weight distortion as a function of distance from shore in Elastic-II" width="256"/>
+       <img src="resources/images/elastic-x-weights.png" 
+           alt="How we weight distortion as a function of distance from shore in Elasitic-X" width="256"/>
+   </p>
 
 ### EqualEarth
 
