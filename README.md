@@ -65,10 +65,11 @@ some examples of how to plot data in Elastic projections.
 </p>
 
 The Elastic-II projection greatly improves on the distortion present in
-the Spilhaus-Adams projection, but at the cost of Australia. Australia
-is disintegrated–cut nearly in half and then smeared along the edge of
-the projection so as to be unrecognizable. In practice, people tend to
-find this confusing.
+the Spilhaus-Adams projection, but at the cost of Australia and
+portions of Indonesia. Australia, Sumatra and Java are
+disintegrated–cut nearly in half and then smeared along the edge of the
+projection so as to be unrecognizable. In practice, people tend to find
+this confusing.
 
 #### Elastic-X
 
@@ -85,9 +86,10 @@ make it more suitable for our use cases.
 
 1. Shorten the cut that runs through Thailand. In Elastic-II this
    continues down into Australia, see central red line below, which is why
-   Australia gets disintegrated, but here we truncate it in Thailand, see
-   solid portion of red line below, which preserves Australia at the
-   expense of some additional distortion on the ocean.
+   Australia and parts of Indonesia get disintegrated, but here we
+   truncate it in Thailand, see solid portion of red line below, which
+   preserves Australia and Indonesia at the cost of causing some
+   additional distortion on the ocean.
 
    <p float="left" align="center">
        <img src="resources/images/map-cuts.png" 
