@@ -89,7 +89,9 @@ make it more suitable for our use cases.
    Australia and parts of Indonesia get disintegrated, but here we
    truncate it in Thailand, see solid portion of red line below, which
    preserves Australia and Indonesia at the cost of causing some
-   additional distortion on the ocean.
+   additional distortion on the ocean. Perhaps more importantly for
+   an ocean-centered projection, it also preserves the passage between
+   the Pacific and Indian oceans north of Australia.
 
    <p float="left" align="center">
        <img src="resources/images/map-cuts.png" 
