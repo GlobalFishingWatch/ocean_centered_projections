@@ -30,7 +30,9 @@ You'll need:
     <img src="resources/images/spilhaus-adams-distortion.png" alt="Distortion in Spilhaus-Adams projection" width="384"/>
 </p>
 
-    TODO: Provide some links to discussion of history
+For some discussion of the history of the Spilhaus-Adams projection
+see [here](https://storymaps.arcgis.com/stories/756bcae18d304a1eac140f19f4d5cb3d)
+and [here](https://blog.map-projections.net/spilhaus-projections-a-quintet-of-world-ocean-maps).
 
 The main disadvantage of the Spilhaus-Adams projection is that it has
 quite large distortion relative to Elastic projections. Most
@@ -68,15 +70,37 @@ is disintegrated–cut nearly in half and then smeared along the edge of
 the projection so as to be unrecognizable. In practice, people tend to
 find this confusing.
 
-#### Elastic-X (aka Ozone?)
+#### Elastic-X
 
 <p float="left" align="center">
     <img src="resources/images/elastic-x.png" alt="Vessel Presence in Elastic-X projection" width="384"/>
     <img src="resources/images/elastic-x-distortion.png" alt="Distortion in Elastic-X projection" width="384"/>
 </p>
 
+We're currently calling this Elastic-X as a placeholder, where X means
+unknown. We hope to come up with a more descriptive name for it at some
+point.
 
-    TODO: discuss choices a bit
+This is closely related to Elastic-II, but we've made two changes to
+make it more suitable for our use cases.
+
+1. Shorten the cut that runs through Thailand. In Elastic-II this continues down into Australia, which is why
+   Australia gets disintegrated, but here we truncate it in Thailand, which preserves Australia at the expense
+   of some additional distortion on the ocean.
+
+2. Change the weighting functions. In Elastic-II, the open ocean and a
+   small strip along the coast are weighted highly, while inland regions
+   are down-weighted. For shape distortion, we use a similar weighting scheme 
+   as used in Elastic-II, where we weight the oceans high and inland low.
+   However, for the area distortion we weight the areas near the shore, both
+   inland and at sea, highly and everything else low. We also broaden transition
+   region in both cases.
+
+   The results in less distortion near the shore and more in the high
+   seas than we get if we use the same weighting scheme as Elastic-II with this
+   set of cuts. Since the majority of ocean activity occurs near
+   shore, this seems like a good trade off. It also results in less distortion
+   of Australia and Antarctica which makes it somewhat easier interpret the map.
 
 ### EqualEarth
 
