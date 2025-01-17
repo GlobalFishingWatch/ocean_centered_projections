@@ -84,14 +84,12 @@ up with a more descriptive name for it at some point.
 This is closely related to Elastic-II, but we've made two changes to
 make it more suitable for our use cases.
 
-1. Shorten the cut that runs through Thailand. In Elastic-II this
-   continues down into Australia, see central red line below, which is why
-   Australia and parts of Indonesia get disintegrated, but here we
-   truncate it in Thailand, see solid portion of red line below, which
+1. Remove the central cut that runs down through Thailand, Indonesia and
+   into Australia, see central, dashed, red line below. Removing this cut
    preserves Australia and Indonesia at the cost of causing some
-   additional distortion on the ocean. Perhaps more importantly for
-   an ocean-centered projection, it also preserves the passage between
-   the Pacific and Indian oceans north of Australia.
+   additional distortion on the ocean. Perhaps more importantly for an
+   ocean-centered projection, it also preserves the passage between the
+   Pacific and Indian oceans north of Australia.
 
    <p float="left" align="center">
        <img src="resources/images/map-cuts.png" 
