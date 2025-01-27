@@ -2,8 +2,6 @@
 
 A collection of Ocean centered projections we are experimenting with.
 
-# TODO: add distortion plots for all three projections
-
 ## Data
 
 You can download some sample data from Global Fishing Watch following the 
