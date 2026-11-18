@@ -1,0 +1,14 @@
+# Large regenerable data and caches (rebuild with the make_texture/precompute scripts)
+*.npz
+*.npy
+*.tif
+*.nc
+cache_*/
+frames/
+frames_*/
+tex_*.png
+texture_*.png
+topo_0p05deg.png
+ocean_bathy_0p1deg.png
+qa_*.png
+*.log
